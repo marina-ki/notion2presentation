@@ -34,24 +34,26 @@ function extractContent() {
       };
     }
 
-    let newHTML = block.outerHTML;
-    if (images && images.length > 0) {
-      // 画像ブロックの処理
-      const imgRegex = /<img[^>]+>/g;
-      const imageHTMLs = []
+    if (currentSlide) {
+      let newHTML = block.outerHTML;
+      if (images && images.length > 0) {
+        // 画像ブロックの処理
+        const imgRegex = /<img[^>]+>/g;
+        const imageHTMLs = []
 
-      images.forEach((imgTag, i) => {
-        const imageUrl = imgTag.src;
-        imageHTMLs.push(`<img src="${imageUrl}" alt="Image" style="width:100%; height:100%;">`);
-      });
-      newHTML = newHTML.replace(imgRegex, () => imageHTMLs.shift() || '');
+        images.forEach((imgTag, i) => {
+          const imageUrl = imgTag.src;
+          imageHTMLs.push(`<img src="${imageUrl}" alt="Image" style="width:100%; height:100%;">`);
+        });
+        newHTML = newHTML.replace(imgRegex, () => imageHTMLs.shift() || '');
+      }
+
+      // max-widthの削除
+      const maxWidthRegex = /max-width:[^;]+;/g;
+      newHTML = newHTML.replace(maxWidthRegex, '');
+      
+      currentSlide.content += removeContenteditableElements(newHTML);
     }
-
-    // max-widthの削除
-    const maxWidthRegex = /max-width:[^;]+;/g;
-    newHTML = newHTML.replace(maxWidthRegex, '');
-    
-    currentSlide.content += removeContenteditableElements(newHTML);
       
     
   }
