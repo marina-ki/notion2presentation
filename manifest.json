@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "notion2presentation",
+  "version": "1.1",
+  "description": "Notionページをプレゼンテーションに変換します。",
+  "permissions": ["activeTab", "scripting", "tabs", "storage"],
+  "host_permissions": ["https://www.notion.so/*"],
+  "action": {
+    "default_title": "notion2presentation"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.notion.so/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["presentation.html", "presentation.css", "presentation.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

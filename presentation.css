@@ -1,0 +1,99 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  max-width: 100vw; 
+  overflow-x: hidden;
+  max-height: 100vh;
+  overflow-y: hidden;
+  font-size: 48px;
+  line-height: 1.5;
+}
+
+.slide {
+  display: none;
+  padding: 60px 100px;
+  height: calc(100vh - 16px);
+}
+
+.slide.active {
+  display: block;
+}
+
+.controls {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+}
+
+#slide-indicator {
+  width: 100%;
+  height: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+/* 表紙 */
+.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  font-size: 72px;
+  font-weight: bold;
+
+}
+
+[class*="sub_header-block"] {
+  margin-top: 0 !important;
+}
+
+/* notion のh1ブロック */
+h2 {
+  margin-bottom: 20px !important;
+  margin-left: -20px !important;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif !important;
+}
+
+.indicator {
+  flex: 1;
+  background-color: #626262;
+}
+
+.indicator.done {
+  background-color: #323232;
+}
+/* トップレベルのli */
+.notion-bulleted_list-block div:nth-child(1) .pseudoSelection::before {
+  content: "●";
+  font-size: 20px;
+}
+
+/* ネストされたli */
+.notion-bulleted_list-block div:nth-child(2) div div:nth-child(1) .pseudoSelection::before {
+  content: "○";
+  font-size: 20px;
+}
+
+.notion-bulleted_list-block div:nth-child(2) div div:nth-child(2) .pseudoSelection::before {
+  content: "■";
+  font-size: 20px;
+}
