@@ -12,7 +12,8 @@ https://github.com/user-attachments/assets/6e2fa736-fe7d-4010-a152-41134efce789
 ## 1. ソースコードのダウンロード
 
 Code ボタン →Download ZIP をクリック → ダウンロードされた zip ファイルを解凍
-![CleanShot 2024-09-28 at 21 03 04@2x](https://github.com/user-attachments/assets/72dc4eb8-e8fe-4723-a6f5-e610d28b60bc)
+![Image 2968x1028 from GitHub](https://github.com/user-attachments/assets/a5ffb0d8-0fca-4a17-a74c-3e7a74164f35)
+
 
 ## 2. Chrome への拡張機能の読み込み
 
